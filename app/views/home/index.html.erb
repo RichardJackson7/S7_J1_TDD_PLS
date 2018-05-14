@@ -1,13 +1,7 @@
-<h1>Home Index</h1>
-<p>Gère tes Migrations</p>
+<div class='text-center'>
+	<h1>Buy a "zucchini" to get in the club</h1>
+	<h2> and Manage your migrations</h2>
+</div>
 <br>
 
-<h2> List of Users </h2>
-<% @users.each do |info| %>	
-	<p>First Name: <%= info.first_name %></p>
-	<p>Last Name: <%= info.last_name %></p>
-	<p>Email : <%= info.email %></p>
-
- -------------------------------
-  <br>
-	<%end%>
+<h3 class='text-center' class="p-2 text-dark"> <%= link_to "Index of Users", home_show_path %></h3>

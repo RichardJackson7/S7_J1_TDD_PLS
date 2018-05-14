@@ -1,0 +1,12 @@
+<div class='text-center'>
+<h1> List of Zucchinis </h1>
+<br>
+<% @users.each do |info| %>	
+	<h5>First Name: <%= info.first_name %></h5>
+	<h5>Last Name: <%= info.last_name %></h5>
+	<h5>Email : <%= info.email %></h5>
+
+ -------------------------------
+  <br>
+	<%end%>
+</div>
