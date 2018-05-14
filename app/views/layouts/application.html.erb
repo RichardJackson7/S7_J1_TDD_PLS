@@ -5,11 +5,33 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+        <h5 class="my-0 mr-md-auto font-weight-normal">Club Privé</h5>
+      <nav class="my-2 my-md-0 mr-md-3">
+        
+        <% if user_signed_in? %>
+        <span class="p-2 text-dark"> <%= link_to "Index of Users", root_path %></span>
+        <span class="btn btn-outline-primary"> <%= link_to "Edit Account",  edit_user_registration_path %></span>
+        <span class="btn btn-outline-primary"> <%= link_to "Log Out", destroy_user_session_path, method: :delete%></span>
+        
+        <% else %>
+        <span class="btn btn-outline-primary"> <%= link_to "Log In",  new_user_session_path %></span>
+        <span class="btn btn-outline-primary"> <%= link_to "Register Now",  new_user_registration_path %></span>
+        
+        <% end %>
+      </nav>
+    
+    </div>
+
+
+
     <%= yield %>
   </body>
 </html>

@@ -1,0 +1,13 @@
+<h1>Home Index</h1>
+<p>Gère tes Migrations</p>
+<br>
+
+<h2> List of Users </h2>
+<% @users.each do |info| %>	
+	<p>First Name: <%= info.first_name %></p>
+	<p>Last Name: <%= info.last_name %></p>
+	<p>Email : <%= info.email %></p>
+
+ -------------------------------
+  <br>
+	<%end%>
